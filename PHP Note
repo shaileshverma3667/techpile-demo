@@ -1,0 +1,91 @@
+Array:-Array is the collection in php.There are following type of array:-
+1.One dimensional Array
+2.Associative Array
+3.Two dimensional Array
+
+Associative Array:-
+======================>Associative array is an array in php in which elements are stored in key and value pair.
+
+$arr=array('name'=>'Shailesh Verma','address'=>'Ambedkar Nagar'); 
+
+echo $arr['name'];
+echo $arr['address'];
+
+
+1.Crete an array of ten number by taking input from user.now copy even number in EAR array and odd numbers in OAR array.
+now display elements of EAR and OAR.
+
+2.Create an array of ten numbers.Now display maximum value and minimum value
+
+Funcation:-
+=============>Funcation is a named block of code.which perform specific task.if you hava a block of code which required 
+different location of program,that you can make a funcation of that code and call it from desired locations.
+
+in php funcation is created by useing 'funcation' keyword followed by funcation name.
+
+Syntax:-
+--------->
+funcation funcationname(parameters)
+{
+//code 
+}
+Eg:-
+funcation add($a,$b)
+{
+return $a+$b;
+}
+
+Recursion:-
+============>When a function call itself,then it is called Recursion.
+
+Class:-
+========>Class is a collection of variables and methods.class is created by useing class keyword followed by classname.
+
+<?php
+class MyClass
+{
+funcation sayhello()
+{
+echo"<h1>Hello World</h1>";
+}
+}
+//object created
+$m=new MyClass();
+$m->sayhello();
+?>
+
+
+Constructor:-
+==============>Constructor is a special method which is use to initialize variables.Constructor call automatically as
+soon as object is created.
+function_construct(parameters)
+{
+
+}
+
+Task
+=====>
+1.Write the php script to find greatest number in three numbers using user defined function by taking input from user.
+
+2.Create a class Student with three variables rollno,name and fee.Now create a constructor to initialize these variables
+and make a display () method to display values.
+
+Database connectivity in php using mysql:-
+============================================>
+1.Establish the connection.
+$con=mysqli_connect(servername,username,password,databasename);
+
+2.Specify command.
+$query="sql statement";
+$res=mysqli_qurey($con,$query);
+
+Variable:-
+===========>A variable is container which contains a value ,value may get change during the the execution of a programm.
+
+
+
+
+
+
+
+

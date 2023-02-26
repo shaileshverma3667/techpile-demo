@@ -1,0 +1,737 @@
+ 
+==================================================================================================
+                    How to set path of java compailer?
+
+c-->program file-->java-->jdk-->bin
+copy the above path (c:\program file\java\jdk\bin)
+1.right click on this pc
+2.click on properties
+3.then click on advance system setting
+4.then click on Environment variable
+5.select path system variable and click on edit button
+6.now click on new button then paste the path
+7.click on OK button for all windows
+==================================================================================================
+         Steps to make a programm in Java
+1.select and editor to write code like Notepad, Notepad++,editplus..etc.
+2.write a java code in editor
+3.save the program file with .java exetnsion
+4.compile the program
+5.Excute the program
+==================================================================================================
+Class:- Class is the collection of variable and method.
+
+for example 
+
+class-->(class is a keyword) p1
+{
+public-->(access modifire) static-->(Modifire) void-->(Return type) main-->(method name) 
+                    (String [] args)-->to take command line input. 
+{
+System-->(class).out-->(object).printlen-->(function/method)("Hello SPI-->(Message)");
+}
+}
+==================================================================================================
+Package :- Package is the collection of classe,interfaces and sub package is called Packages.
+------
+2.How to take input from user in java?
+   
+   import-->(keyword) java.util-->(package).Scanner-->(class);
+   import java.util.Scanner;
+ 
+ Scanner sc(variable)=new(keyword)Scanner(system.in);//creation of object of Scanner class
+ // Scanner sc=new Scanner(System.in);
+ 
+ for int input:-
+ --------------
+                int a;
+			a=sc.nextInt();
+For float input:- 
+----------------
+				float b;
+				b=sc.nextFloat();
+For Double input:-
+----------------
+					double c;
+					c=sc.nextDouble();
+==================================================================================================
+                 23/12/2021
+Namig convention in java:;-->
+------------------------------
+Namig convention for class and interface:-
+ few name of class and interface java using the pascal coading.in java class name or interfac name is started with 
+ capital letter. If class or interface name one word then first letter of each word must be in capital letter.
+E.g
+    String,StringBuffer,NullPointerException,ArrayIndexOutOfBoundsException.
+
+Namig convention for method in java:-
+									Java follows camel coading for method name.In java method named is started with small letter,but if another word is added then first letter of another word will in capital letter.
+for example:-  next(),nextInt(),equalsIgnoreCase()
+
+Note:- In java you can create multiple main() methods in single source file,but their classes should be different.
+
+java program in compail in file name but run class name. 
+
+*= total classes ,interfaces ,and sub package.
+
+=================================================================================================
+Decision Controls:=> The Decision control are used for decision making. 
+In  java following types of decision control	:-
+1.if statement
+2.if else statement
+3.ladder if else statement]
+4.switch statement
+if statement:-
+------------- if is a keyword which works as decion control . we attach a condition with if statement. and if given condition is true then if block code will execut and 
+ if givin condition is false then code will not execute					 
+
+
+
+
+
+
+if else statement:-
+------------------ If satement is a variable of if satement we attach a condition with if statement ,if condition is true then if block code will executed 
+and given condition is false then else block is execute.
+Syntax:-
+     if(condition)
+	 {
+	 //if code block
+	 }
+	 else
+	 {
+	 // else code
+	 }
+==================================================================================================
+Ladder if-else:- if you have many condition and you want to executecode based on those condition ,then you can  use ladder if-else.
+Syntex:-
+-------  if(condition 1)
+		   {
+ 			 //code 1
+           }
+         else if(condition 2)
+		   {
+		     // code 2
+		   }
+		 else
+		   {
+		     // code execute else part
+		   }
+======================================================================================================	
+
+ Is java hardware independent?   Ans:= Yes
+Is Java platfrom independent?   Ans:- yes
+What is OOPS?  
+What is JVM?  
+What is JRE?
+What is JDK?
+Explain public static void main().
+Explain Sysstem.out.println.
+What is Class?
+What is Package?
+
+
+Switch:-
+-------->Switch is a keyword,which works as case control.it is used to create a menu based program.
+syntax of switch:-
+------------------>
+switch(expression)//int or char or string
+case 1:
+//code1 
+break;
+case 2:
+//code2
+break;
+default:
+//code
+break; 
+}
+
+Loop Control:-
+---------------->if you have a block of code,which you want to execute repeatedly up to given condition is true, then you can
+use a loop control.
+in java programming language there are four type of loop control:-
+1.while loop
+2.for loop
+3.do-while 
+4.for each loop
+
+
+1.while loop:-
+-------------->while is a keywords which works as loop control.
+Syntax:-
+initialization of loop counter;
+while(condition)
+{
+//code
+Updation of loop counter;
+}
+----------------------------------------------------------------------------------------------------------------------------
+//WAP to print the table of given number
+
+import java.util.scanner;
+class p8
+{
+public static void main(string [] args)
+{
+int n,i,t;
+System.out.print("Enter a number:");
+n=new Scanner(System.in).nextint();//Anonymous Obj
+i=1;
+while(i<=10)
+{
+t=n*i;
+System.out.println(t);
+i++;
+}
+}
+}
+
+
+For loop:-
+----------->for is keyword in java which works as loop control.for is an entry loop control.the working for loop 
+is same as while loop,but syntax is different.
+Syntax of for loop:-
+
+for (Initialization;condition;updation)
+{
+//code
+}
+
+do-while loop:-
+---------------->in do-while loop condition is tested ofter execution of code.So do-while loop is called as exit control.
+
+Syntax:-
+initialization of loop counter;
+do
+{
+//code 
+Updation of loop counter;
+}
+while(condition);
+
+for each loop:-
+--------------->for each loop in java is used to traverse the elements of a collection.
+
+Array:-
+-------->Array is a collection of similar data types,that means an array can store multiple values of similar data types.
+
+Declaration of Array:-
+
+datatype[] arrayname;
+
+E.g-
+int[]list;//Declaration of arry.
+list=new int[5];//Instantiation of array
+              or
+int[] list=new int[5];//Declaration and instantiation of array 
+
+Initialization of Array:-
+-------------------------->
+
+int[] x={10,20,30,40,50};
+x[0]=10
+x[1]=20
+x[2]=30
+x[3]=40
+x[4]=50 
+
+How to take input from user for an array?
+
+int[] list=new int[5];
+int i;
+Scanner sc=new Scanner(System.int);
+System.out.println("Enter five numbers");
+for(i=0;i<5;i++
+{
+list[i]=sc.nextInt();
+}
+
+
+String:-
+--------->String is a class in java,which is available in java.lang package.
+Built-in methods of String class:-
+
+1.toUpperCase():-this method of String class converts string into upper case.
+2.toLowerCase():-this method of string class converts string into lower case.
+3.length():-this method of string class find the length of string.
+
+Equals():-
+------------>equals() methods to Strings class is used to compare two string for equality.this methods returns boolean
+value.
+
+equalsIgnoreCase():-
+---------------------->this methods string class is used to compare two strings for equality but this method
+avoid case sensitivity.this method also return boolean values.
+
+
+split():-
+--------->split method of string class is used to split (break)string into substrings from given string.this method
+return array of String.
+str="He is good boy."
+String [] words=str.split("");
+
+
+
+
+Replace():-
+------------>replace method of string class replace a string with another string in given string .
+
+Method in java:-
+----------------->Method is a named block of code which perform specific task.if you have a block of code which required
+different location of application then you can create a method of that code and call it from desired locations.
+
+Adavantage:-By using method you can avoid to write same code over and over.
+Creation of method:-
+--------------------->
+Modifier returntype methodname(parameters)
+{
+//method code
+}
+
+types of user-defined method in java:-
+-------------------------------------->
+1.Static methods
+2.non-static methods
+
+Static methods:-
+------------------>static methods are created by using 'static' modifire.therse methods are also called class methods.
+there is no need of object to call static.
+
+non-static methods:-
+---------------------->the static modifire is not used in non-static method.non-static method can be call by creating
+object of class.
+
+Note:-
+------> In java we create method in side class and outside of main method.
+
+
+OOPS:-
+=======>OOPS is stand for object oriented programming system.it is a mechanism of softwere development.
+it has four pillars:-
+1.Abstraction
+2.Encapsulation
+3.Inheritance
+4.Polymorphism
+Any programming language which follows these concepts is called as object oriented programming langauge.
+Abstraction:-
+------------->Abstraction is a mechanism to show essential functionalities and hide all other functionalities of an 
+object.
+
+Encapsulation:-
+----------------->Encapsulation is mechanism to wrap properties and functionlities in single unit.and that unit is called
+object.
+Inheritance:
+-------------->In inheritance you can create a new product by using existing product.
+
+Polymorphism:-
+--------------->The term polymorphism means one thing many forms.
+
+Class:-
+--------->Class is the collection of variable and methosds.Class is also called blueprint of object.Class is created by
+using class keyword followed by classname .the body of class is inclosed within braces.within body of class we create
+variable and methods.
+	   
+class classname
+{
+//Variables and methods
+}
+ 
+Constructor:-
+--------------->Constructor is a special mathod which is used to initialize final variable.Constructor has following properties.
+
+1.Constructor name is same as class name.
+2.Constructor has no return type.
+3.Constructor call automatically as soon as object is created.
+
+class SpiEmp
+{
+	final int empid;
+	String empname;
+	double salary;
+	SpiEmp(int eid)
+	{
+		empid=eid;
+	}
+	void setValue(String ename,double sal)
+	{
+		empname=ename;
+		salary=sal;
+	}
+	void display()
+	{
+		System.out.println("Employee Id="+empid);
+		System.out.println("Employee Name="+empname);
+		System.out.println("Employee Salary="+salary);
+	}
+}
+class ClassDemo3
+{
+	public static void main(String[] args)
+	{
+		SpiEmp e1=new SpiEmp(1001);
+		e1.setValue("Shailesh Verma",4000.0);
+		e1.display();
+		SpiEmp e2=new SpiEmp(1002);  
+		e2.setValue("Brijesh Mishra",45000.0);
+		e2.display();
+	}
+}
+
+Inheritance:-
+===============>Inheritance is a feature of object oriented programming.in inheritance you can create a new class 
+by useing existing class.the existing class is called base class and new created class is called derived class.
+the concept of inheritance is also called 'Reusebility.
+Syntax:-
+========>
+class A
+{
+//Variables and methods
+}
+class B extends A
+{
+//Variables and methods
+}
+
+Types of Inheritance
+---------------------->In java Programming language  follwing types of inheritanceare are supported:
+1.Single Inheritance
+2.Hierarchical Inheritance
+3.Multi-level inheritance
+
+1.Single Inheritance:-
+========================>In single Inheritance there is a single base class and single derived class.
+Syntax-
+class A
+{
+//varibles and methods
+}
+class B Extends A
+{
+//Variables method
+}
+
+2.Hierarchical Inheritance:-
+=============================>In hierarchical Inheritance there is single base class and multiple derived classes.
+Syntax:-
+class A
+{
+//Variables and methods 
+}
+class B extends A
+{
+//Variavales and methods
+}
+class C extends A
+{
+//Variables and methods
+}
+
+3.Multi-level Inheritance:-
+=============================>
+Syntax:-
+class A 
+{
+// Variables and methods
+}
+class B extends A 
+{
+//Variables and methods
+}
+class C extends B 
+{
+Variables and methods 
+}
+
+Polymorphism:-
+===============>The term polymorphism means one things many forms.In java programming language there are two types of 
+polymorphism.
+1.Compile Time polymorphism(Method overloading)
+2.Run Time polymorphism(Method overriding)
+
+Method Overloading:-
+---------------------->In java you can create multilple methods with same name in same class but there parameters should
+be different,based on method parameters it is decded at compilation time that which methods call from where.
+this concept is call method overloding.
+
+          Method parameters can be differentin two types:-
+		  1.Number of parameters should be different.
+		  2.Types of parameters should be different.
+
+Method Overriding:-
+--------------------->The re-writing of base class method into derived class is called method overriding.
+Rules for methods overriding:-
+------------------------------>
+1.Class must be inherited.
+2.Base class method name and derived class method name must be same. 
+3.Base class method parameters and derived class method parameters must be same.
+4.Base class method return type and derived class method return types can be same.
+5.Base class method modifire and derived class method modifire can be same or derived class method modifire should
+be low precedence.
+
+Interface:-
+===========>Interface is the collection of Abstract methods and public static final variable.interface is created
+by useing interfac keyword followed by interfac name.the body of interfac is inclosed within braces.within body of interface
+we declare abstract methods and public static final variable.
+E.g:-
+interface interfacname
+
+interface MyInterface
+{ 
+void m1();//public abstract void();
+void m2();//public abstract void();
+void m3();// public abstract void();
+}
+
+
+why interfac?
+Interface:-
+=============>if you requirements but you don,t know about its implementation.then you can use interface contain abstract 
+methods.
+
+Key point about interfac:-
+----------------------------->
+-->An Interface can extends(inherit) anther interfac.
+-->An interfac can extends(inherit) multiple interfac.
+-->We can,t create object of interfac,but we can create variable of interfac
+
+Abstract Class:-
+=================>Abstract class is a class which contain abstract methods and implemented methods both.if you have
+requirements,you know about implementation but nat complete implementation then you can use abstract class.
+
+Key point of abstract class:-
+1.An Abstract class can implement interface.
+2.An Abstract class can extends(inherit) anther abstractc class.
+3.We con,t create object of abstract class ,but we can create variable of abstract class.
+
+Class:-
+========>If you have requirements and you know about its complete implementation then you can use class because class
+contain implemented methods only.
+Key points about class:-
+1.A class can implement interfac.
+2.A class can extends(inherit) abstract class.
+3.A class can extends(inherit) another class.
+4.We can create object class.
+
+Exception:-
+============>The dictionary meaning of exception is abnormal termination.When exception is occurred the program is terminated
+abnormally and rest of code is not executed.
+In java programming language there are three types of exceptions:-
+1.Checked Exception:-
+-------------------->check exceptions are caught by compiler at compilation time.
+E.g:-FileNatFoundException,ClassNotFoundException,SQLException,IQLException,etc.
+
+2.Unchecked Exception:-
+------------------------>Unchecked Exception are cought at run time .
+E.g:-NullPointerException,ArithmeticException,ArrayIndexOutOfBoundsException,InputMismatchException ,etc.
+
+3.Errors:-
+----------->Errors are accured due to lack of system resources.
+E.g:-AwtError,HeapMemoryFullError,IOError....etc.
+
+Exception Handling:-
+=====================>Exception Handling is a mechanism to handle exception to achieve normal execution of program.
+for exception handling in java we use try ,catch finally,throw and thorows keywords.
+you can handil exception in two ways:-
+
+1.By useing try catch block.
+2.By useing throws keyword.
+
+Syntax of try catch:-
+
+try
+{
+//Code which you want to protect
+}
+catch(ExceptionType variable)
+{
+//Code which is used to handle exception(alternative code)
+}
+finally     //Optional
+{
+//code which you want exceute always.
+}
+
+Note:-
+=======>For a single try block where can be multilple catch block.
+
+Taking input user useing BufferedReader:-
+===========================================>BufferedReader is a class available in java.io package
+
+BufferedReader br=new BufferedReader(new InputStreamReader(System.in));
+For string input:-
+String name=br.readLine();
+For int input:-
+int a=Interger.parseInt(br.readLine());
+
+For float input:-
+float b=Float.ParseFloat(br.readLine());
+
+For double input:-
+double c=Double.ParseDouble(br.readLine());
+
+For long input:-
+long d=Long.parseLong(br.readLine());
+
+
+Note:-
+======>When you take input by useing BufferedReader,it generate a checked exception named IOException.
+
+package:-
+=========>Package is the collection of classes interfaces,and sub-packages.package is created by useing 'package' keyword
+followed by package name.
+package mypack;
+
+Exercise:-Write a java program to create a package with name 'mypack'.inside this package create a public class TempConv.
+In tempConv class create two methods ctof() and ftoc().the ctof methods converts temperature from centigrade to forenhieght
+and ftoc() method converts temperature from foreinhieght to centigrade.Now import package mypack and test the class TempConv.
+
+
+Compile.java file in such the manner that directory of package automatically created and class file move to that package
+directory.
+
+javac -d.TempConv.java
+
+
+Multithreading:-
+================>the concept of multithreading is taken from the concept of multitasking.in multitasking CPU switches
+between multiple processes whereas in multithreading CPU switches between multiple sub-processes(threads).
+
+in java programming language you can create thred in two ways:-
+1.By extending thread class.
+2.By implementeing Runnable interface.
+
+reation of thread by extending thread class:-
+---------------------------------------------->In this way ,you first inherit thread class and override run() method
+of thread class.
+
+class MyThread extends Thread 
+{
+//Here we override run() methods of thread class 
+public void run()
+{
+//Here you can write your code
+}
+}
+
+
+Creation of thread by implimenting Runnable interface:-
+
+class MyThread implements Runnable
+{
+public void run()
+{
+//Here you can write code for your Thread
+}
+}
+ 
+
+================================================================================================================================================================== 
+
+
+primitive Data type:
+
+1.Integral /integer type value /whole numbers
+a.Byte 
+b.Short
+c.long
+
+2.Floating
+a.Float
+b.double
+
+3.Boolean
+true/false
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

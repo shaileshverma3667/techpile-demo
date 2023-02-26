@@ -1,0 +1,246 @@
+DBMS:-
+------->DBMS stand for Database management system.DBMS is type of application softwere
+which is used to manage,store and manipule the data in database management system.
+
+Database user:-
+---------------->End user are those users who use database through application,but 
+they don't know about existance and structure of database.
+
+Programmers:-
+-------------->programmers are professionals who uses database in application development.
+
+DBA:-
+------>DBA is stand for Database Administrater .the DBA is responsible for creation of 
+database and he/she also provide security in database.
+
+SQL:-
+------>SQL is stand for structure query language,it is used perform database operation.
+Based on database operation SQL is categorized in four parts.
+
+
+1.DDL(Data definition language).
+2.DML(Data Manipulation language).
+3.DCL(Data control language).
+4.TCL(Transaction control language).
+
+Commands of DDL:-
+------------------->
+1.Create:-
+--------->the create commands is used to create a new database object.
+
+2.Alter:-
+----------->tha alter commands is used to modify database object.
+ 
+3.Drop:-
+------------>the drop commands is used to delete database object.
+
+4.Truncate:-
+-------------->truncate commands is used to delete all data from database object.
+
+5.Backup:-
+------------>Backup commands is used to take backup of database object.
+
+6.Restore:-
+------------>the restore commands is used to reconstruct database from its backup.
+
+
+Commands of DML:-
+------------------>
+
+1.Insert:-
+------------>the insert commands is used to insert data into database object.
+
+2.Delete:-
+----------->the delete commands is used to delete record from database object.
+
+3.Update:-
+------------>the update is used to modify record in database object.
+
+4.Select:-
+------------>the select commands is used to select records database object.
+
+Commands of DCL:- 
+------------------>
+
+1.Grant:-
+---------->the grant commands is used to give rights to database user.
+
+2.Revoke:-
+------------>the revoke commands is just  opposite to grant commands and this is use  
+to take off rights from database user.
+
+3.Rename:-
+----------->the rename commands use to change the name of database object.
+
+Commands of TCL:-
+------------------>
+
+1.Commit:-
+----------->commit commands is use to save transaction.
+
+2.Rollback:-
+------------->Rollback commands is use to undo the transaction.
+Primary key:-
+-------------->Primary is a field in a table,which is use to identify each racord
+uniquly.it is atomic and nat null.0
+
+Join Operation:-
+----------------->
+if you want to select data from two tables then you can perform join operation .
+for join operation atleast one field must be comman in both tables.
+
+Foreign Key:-
+------------->Foreign key is a field in table ,which works as primary key which onther
+table.there can be more then one foreign key in a table.
+
+Order by :-
+------------>Order by is use to arrange record in sorteds order,
+
+select * from empinfo order by empname;
+
+for decending:-
+---------------->
+select * from empinfo order by empname desc;
+
+SQL Operater:-
+---------------->
+>             greator than
+<             less than
+>=            gretor than or equal to 
+<=            less than or equal to
+=             equal to 
+<>            not equal to 
+like          like operater is for  pattern matching
+in            in operater check value in given values
+bitween       check value in given range.
+
+
+
+1.select the racord with empid 1001.
+select * from empinfo where empid=1001;
+
+2.select those racords which have salary more than 50000.
+
+select * from empinfo where salary>50000;
+
+3.select those record with last name '%Singh'.
+
+
+4.Select those record which name start with 'A'.
+
+select * from empinfo where empname like 'A%';
+
+SQL Function:-
+---------------->
+1.Sum():-
+-------->sum()function is used to find sum of values of given column,
+
+
+select sum(salary)from empinfo;
+
+select sum(salary)"total Salary"from empinfo;
+
+2.max():-
+---------->max function find the maximum value of given column.
+
+select max(salary)"Maximum Salary" from empinfo;
+
+
+3.min():-
+---------->the min()function find the minimum value of given column.
+
+select min (salary)"Minimum Salary"from empinfo;
+
+4.avg:-
+---------->the avg function find the average value of given column.
+
+select avg(salary)"average Salary"from empinfo;
+
+5.count():-
+------------>the count() function is used to count number.of rows in a table.
+
+select count(*)"No.of rows"from empinfo;
+
+Task:-
+------->Select the record with maximum salary from empinfo,
+
+Nested Query:-
+---------------->if we use a query inside another query,then it is called nested query.
+
+
+select * from empinfo where salary=(select max (salary)from empinfo);
+
+Join Operation:-
+------------------>if you want to select data from two table,then you can perform join
+operation.For join operation atleast one field should be common in both tables.
+
+select empname,pname from employee, product where employee.empid=product .empid;
+
+Left join operation:-
+---------------------->When you perform left join operation,then all record of left table 
+are displayed and matching record of right table are displayed.
+
+select empname,pname from employee left join product on employee.empid=product.empid;
+
+Right join operation:-
+----------------------->Whenyou perform right join operation then all record of right table
+are displayed are matching record of left table are displayed.
+
+select empname,pname from employee right join product on employee.empid=product.empid;
+
+
+Composit key:-
+---------------->if you make primary key by combining two more colums,than resultant key 
+is called composit key or condidate key.
+
+
+table name:-shipment
+
+ create table shipment
+(
+s# varchar2(5),
+p# varchar2(5),
+qty number(5),
+primary key(s#,p#)
+);
+
+How to createte table from given table?
+
+create table empinfo2 as select empid,empname,salary from empinfo;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

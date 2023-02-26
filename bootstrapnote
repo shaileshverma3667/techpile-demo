@@ -1,0 +1,276 @@
+Bootstrap ke color:-
+-------------------->
+1.primary color
+2.secondary
+3.info
+4.danger
+5.warning
+6.dark
+7.light
+8.white
+9.success
+
+background color:-
+bg-primary
+
+text ka color change karne ke liye:-
+------------------------------------->
+text-colorname
+
+
+text ko center me karne ke liye:
+---------------------------------->
+BSV 4==>text-left =>BSV 5 =>text-start
+BSV 4==>text-right =>BSV 5 =>text-end
+text-center(center ke liye)
+
+
+
+text-transform:uppercase || lowercase || capitalize
+
+text-uppercase
+text-lowercase
+text-capitalize
+--------------------------------------------
+
+Font-size ke liye:-
+--------------------->
+fs-(1-6) tak hoti hai
+fs-1
+fs-2
+fs-3
+fs-4
+fs-5
+fs-6
+
+Font-weight ks liye:-
+--------------------->
+fw-bold
+fw-bolder
+fw-semibold
+fw-normal
+fw-lighter
+
+
+
+font-style:normal:-
+--------------------->	
+font-style:normal  | italic
+fst-normal
+fst-italic
+
+
+text-decoration
+----------------->
+text-decoration-underline
+text-decoration-ovwerline
+text-decoration-linethrough
+
+
+
+Heading:-
+---------->
+h1
+h2
+h3
+h4
+...h6
+
+
+Bootstrap Alert Box:
+----------------------->
+alert alert-danger
+alert alert-warning
+alert alert-info
+
+width:-
+-------->
+w-100 100%
+w-75   75%
+w-50   50%
+w-25   25%
+
+
+bootstrap buttons:-
+-------------------->
+btn btn-danger
+btn btn-primary
+btn btn-secondary
+btn btn-info
+btn btn-warning
+btn btn-success
+
+
+
+button with outline
+--------------------->
+btn-btn-outline-danger
+btn-btn-outline-warning
+btn-btn-outline-info
+btn-btn-outline-success
+..........................
+
+
+padding:-
+---------->
+p-  value(0-5) 0 se 5 tak kuchh bhi padding ho skta hai
+
+p-1=>top left right bottom
+pt=>padding top
+pb=>padding bottom
+BSV4 me pl=>padding-left =>BSV5 ps padding start  pe end
+px=>padding-strat,padding-end.
+py=>padding top and padding bottom.
+
+
+Margin(0-5)
+m=>top,left,right,bottom.
+mt=>margin-top.
+mb=>margin-bottom
+BSV4 margin-left=>ml but BSV5 ms margin start(ms class)
+BSV4 margin-right=>mr but BSV5 me margin end(me class)
+mx=>margin start and margin-end
+my=>margin top and margin-bottom
+margin:0px auto=>mx auto class ka use karenge.
+
+
+Image-responsive:-
+------------------->
+BSV4 =>img-responsive
+BSV5=>img-fluid,img-thumbnail
+
+
+
+
+float-left=>float-start
+float-right=>float-end
+
+
+border-radius:-
+---------------->
+rounded
+rounded-top
+rounded-bottom
+rounded-start
+rounded-end
+rounded-pill
+
+Grid system
+==============>
+
+
+
+
+
+
+
+Bootstrap break point:-
+------------------------->
+sm for small device(mobile)<=576px
+md for medium screen (tab)<=768px
+lg for larg screen(laptop,desktop) <=992px
+xl for extra screen(TV)<=1200px
+xxl for extra extra large screen(Extra Large TV)<=1400px
+
+syntax:-
+-------->
+col-sm-*
+col-ms-*
+col-lg-*
+col-xl-*
+col-xxl-*
+
+
+BVS4 glyphicon glyphicon-home=>BSV5 fontawsome.come=>fo
+
+1.Defference B/W detached HEAD and Branch.
+2.What is HEAD:-
+----------------->current mey kiya latest commit or recent commit kehlata,HEAD.
+Detached:-
+---------->recent commit kiya gya checkout head sey detach ho jata.
+and detached HEAD.
+
+undo: checkout to any commit branch.
+
+How to get deleted files:-
+--------------------------->
+$ git status
+$ git diff
+$ git log =>commitid or recent-branch-of-commit.
+$ git checkout commitid
+or
+$ git checkout branch
+or
+$ git checkout .in current branch.
+
+How to git Push:-
+------------------>
+1.What is origin:-
+-------------------->main cloud server at github,gitlab,bitbucket or bitkeeper or heruko(salesforce company)
+2.origin is recogined as,url.
+       1.https::https//github.com/username/repo.git
+	   2.ssh :(secure shell)
+	   3.git cli*(Administrator)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

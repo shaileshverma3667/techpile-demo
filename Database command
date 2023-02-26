@@ -1,0 +1,329 @@
+*open command prompt:-
+sqlplus / as sysdba;
+Use creat command to create a new database user:-
+syntax:-
+create user <username> identified by possword>;
+E.g:-
+create user appdb2 identified by test;
+
+Use of grant command to give rights to datdabase user:-
+syntex:-
+grant <rights> to <username>;
+E.g:-
+grant dba to appdb2;
+Connect database User:-
+syntax:-
+connect <username>/<password>;
+E.g:-
+
+Use of create command to create a new table:-
+Table:-
+-------- Table is collection of rows and columns.the column are called
+attribute and row are called tuples.
+
+Syntax:-
+Create table<tablename>
+{
+<column_name> <data_type>,
+<column_name> <data_type>,
+<column_name> <data_type>
+};
+
+Primary key:-Primary is a field in a table,which is use to identify each racord
+uniquly.it is atomic and nat null.0
+
+Create table employee
+(
+empid number(5)Primary key,
+empname varchar2(30),
+department varchar2(20),
+salary number(6)
+);
+Command to view table structure:-
+desc<tablename>;
+E.g:-
+desc employee; 
+
+Insert:-
+-------->insert command is used to insert record into the database object.
+Syntax:-
+insert into <tablename> values(<value1>,<value2>);
+E.g:-
+insert into employee values(1001,'Priya','HR',3500');
+insert into employee values(1002,'Rajat','sales',25000');
+insert into employee values(1003,'Disha','Management',600000');
+insert into customer values(1004,'disha','8565743549','disha@gmail.com');
+Select:- Select command is use to view records from database object.
+
+select* from employee;
+select empid,empname,salary from employee;
+
+Use of where clause:-
+where clause is use to specify condition in sql statement.
+Ex-1:-
+select*from employee where empid=1001;
+Ex-2:-
+empid,empname from employee where empid=1001;
+
+Delete Command:-Delete command is use to delete from database object.
+syntax:-
+delete from <table_name>where<condition>;
+Eg:-
+delete from employee where empid=1001;
+Use of update command:-update command is use to modify record of databas object;
+syntx:-
+
+update<tablename>set<columnname>=<value>,
+<columnname>=<value>where<condition>;
+
+Eg:-
+update employee set salary=40000 where empid=1001;
+
+command to select all table
+----------------------------->
+select * from tab;
+
+Use of truncate command:-
+-------------------------
+truncate command is used to delete all databas object ,you can't rollback truncate command.
+synrax:-
+truncate table table_name;
+Eg:-truncate table employee;
+
+drop:-
+-------> drop command is used to delete database object.
+Syntax:-
+drop table <table_name>;
+Eg:-
+drop table employee;
+
+Alter:-
+---------->Alter commandis used to modify data base object.
+
+
+create table login
+(
+userid varchar2(20),
+password varchar2(20)
+);
+
+
+1.Use of alter command to modify column:-
+Syntax:-
+alter table <table_name>modify<columnname>
+<datatype>;
+
+Eg.
+alter table login modify userid varchar2(20)primary key;
+
+
+2.Use of alter command to as a new column:-
+Syntax:-
+alter table <table_name> add <columnname><datatype>;
+
+Eg:-
+alter table login add usertype varchar2(20)
+
+
+3.Use of alter command to delete a column:-
+Syntax:-
+alter table <tablename>drop column<column>;
+Eg:-
+alter table login drop column usertype;
+
+
+4.Use of alter command to Rename column:-
+Syntax:-
+alter table <tablename>rename column <oldname>to <newname>;
+Eg:-
+alter table login rename column password to passwd;
+
+Use of rename command to rename database object;
+------------------------------------------------->
+Syntax:-
+Rename <oldname>to <newname>;
+
+Eg:-
+rename login to logininfo;
+
+
+Join Operation:-
+----------------->
+if you want to select data from two tables then you can perform join operation .
+for join operation atleast one field must be comman in both tables.
+
+Foreign Key:-
+------------->Foreign key is a field in table ,which works as primary key which onther
+table.there can be more then one foreign key in a table.
+
+create table employee
+(
+empid number(5) primary key,
+empname varchar2(30)
+);
+
+
+create table product
+(
+pid number(5) primary key,
+pname varchar2(20),
+empid number(5),
+foreign key(empid) references employee(empid)
+);
+
+empid                empname
+1001                 johan
+1002                 Brown
+1003                 Green
+1004                 Lily
+
+product:-
+pid            pname         empid
+101           Printer      1001
+102           Scanner      1002
+103           Plotter      1003
+104           Laptop       1004
+105           Projecter
+
+
+Now insert records into employee table:-
+
+insert into employee values(1001,'Johan');
+insert into employee values(1002,'Brown');
+insert into employee values(1003,'Green');
+insert into employee values(1004,'lily');
+
+Now insert record into product table:-
+
+insert into product values(101,'Printer','1001');
+insert into product values(102,'Scanner','1002');
+insert into product values(103,'Plotter','1002');
+insert into product values(104,'Laptop','1003');
+insert into product(pid,pname) values(105,'projecter');
+
+select empname from emp table and pname from product table based on empid:-
+
+select empname,pname from employee,product where employee.empid=product.empid;
+
+Interview Question:-
+
+1.What is use of alter command? Haw many types we can use alter command?
+2.What is difference between truncate and drop command?
+
+
+Join Operation:-
+------------------>if you want to select data from two table,then you can perform join
+operation.For join operation atleast one field should be common in both tables.
+
+select empname,pname from employee, product where employee.empid=product .empid;
+
+Left join operation:-
+---------------------->When you perform left join operation,then all record of left table 
+are displayed and matching record of right table are displayed.
+
+select empname,pname from employee left join product on employee.empid=product.empid;
+
+Right join operation:-
+----------------------->When you perform rigt join operation then all record of right table
+are displayed are matching record of left table are displayed.
+
+select empname,pname from employee right join product on employee.empid=product.empid;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

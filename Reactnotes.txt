@@ -1,0 +1,1358 @@
+React Once Again:-
+*********************
+
+How to create React app
+1. open cmd => npx create-react-app appname
+
+How to Run react-app
+1. npm start
+
+How to make our first components:-
+1. components are block repeated code which we can use n of times.
+2. components are building block or the smallest unit of react.
+3. components are of two types
+1. functional Component
+2. class Component
+
+How to create functional components
+************************************
+import React from "react";
+
+function Demo(){
+
+return (
+	<h1>this a Functional Component</h1>
+);
+
+}
+
+How to create class component
+*******************************
+import React,{component} from "react";
+
+class Demo extends Component{
+
+render(){
+		
+		return (
+					<h1>This is class Components</h1>
+			);
+}
+
+}
+
+How to use functional component and class Component
+****************************************************
+in order to use any component if it functional or class Based.
+Use them as Tag : <Demo/> => Demo() => calling
+for class Component Demo => <Demo/> 
+
+Modularity in React
+********************
+1. we cannot put all the component together in one file 
+hence react support concept of modules
+that is we can make modules of each component and then export them
+and we want we can then import them where ever required.
+
+Eg:-
+index.js
+
+function Demo(){
+return (
+<h1> Demo function component</h1>
+)
+}
+
+
+function Demo2(){
+return (
+<h1> Demo function component</h1>
+)
+}
+
+
+
+class Demo3 extends Component{
+
+render(){
+		
+		return (
+					<h1>This is class Components</h1>
+			);
+}
+
+}
+
+inside src/components folder 
+Demo3.jsx
+import React,{component} from "react";
+export default class Demo3 extends Component{
+render(){
+		return (
+					<h1>This is class Components</h1>
+			);
+}
+}
+
+index.js
+
+import Demo3 from "./components/Demo3";
+<Demo3/>
+
+concept of, pairing:-
+*********************
+JSX => Tags => xml
+xml standard => Tag closing it can be self or paired
+
+<Demo/> : valid
+or 
+<Demo></Demo> : valid
+<Demo> Error
+
+concept of parent Tag:-
+************************
+Jsx code :-  Two child component cannot sit together they must a parent.
+
+ReactDOM.render(
+<Demo1>
+<Demo2>
+)
+
+Error 
+ReactDOM.render(
+<div>
+	<Demo1>
+	<Demo2>
+</div>
+)
+
+or
+
+ReactDOM.render(
+<>
+	<Demo1>
+	<Demo2>
+</>
+)
+or
+
+ReactDOM.render(
+<React.Fragment>
+	<Demo1>
+	<Demo2>
+</React.Fragment>
+)
+
+case 2:-
+return (
+	<h1>Tag 1 </h1>
+	<h2> Tag 2</h2>
+	<p> This is paragraph </p>
+)
+
+Error
+
+return (
+	<div>
+		<h1>Tag 1 </h1>
+		<h2> Tag 2</h2>
+		<p> This is paragraph </p>
+	</div>
+)
+
+Note :: it not adviced to use, div Tag as container because, div may take
+his own margin,border,padding and float, because it is block level Element.
+hence all the child inside div we have same property as of div.
+Any changes made inside div will effect all the child
+hence we use React.Fragment because it do not take any extra space and Margin
+Paddding.
+
+hence we recommend to use, return (
+	<React.Fragment>
+		<h1>Tag 1 </h1>
+		<h2> Tag 2</h2>
+		<p> This is paragraph </p>
+	</React.Fragment>
+)
+
+or
+
+hence we recommend to use, return (
+	<>
+		<h1>Tag 1 </h1>
+		<h2> Tag 2</h2>
+		<p> This is paragraph </p>
+	</>
+)
+
+Today Agenda:-
+*******************
+1. working with css
+2. working with Bootstrap
+3. How to use Routing:-
+
+We know that, Using React we are making SPA,
+in MPA (multi-page application), we can move from one page to another 
+page
+but in react we have single page.
+so navigation can be done using hash url.
+
+hash url:- starts from #
+Normal url:-
+https://localhost:3000/contact => contact Page
+https://localhost:3000/gallery => gallery Page
+https://localhost:3000/services => services Page
+https://localhost:3000/home => home page
+https://localhost:3000/ => home page
+
+https://localhost:3000/#contact => contact component
+https://localhost:3000/#gallery => gallery component
+https://localhost:3000/#services => services component
+https://localhost:3000/#home => home component
+https://localhost:3000/# => home component
+
+1. How to this:- 
+  1. Javascript Router
+  2. React Router 
+  
+Problem:-
+Spa  => Header, Footer, Contact,Gallery,Login,Register => Rendering
+conditional Rendering => url => contact then it must load, contact component
+if somebody :- gallery => gallery component.
+
+
+window.location.href.hash
+
+
+
+How to add CSS:-
+===================>
+In react we can add three type of css.
+1.internal
+2.External
+3.Inline
+
+1.External:-
+============>we have App.jsx or App.js (Both extension applicable)inside src but outside component.
+App.css
+And import this file1,inside App.js
+import "./App.css"
+
+2.Internal css:-
+=================>
+it is individual css of each component.
+it css will apply on single component.
+
+here we make header.css for Header.jsx
+herer we make gallery.css for Gallery.Jsx
+here we make contact.css for Contact.jsx
+....
+.....so on
+
+internal css will be placed inside component folder
+styles name folder
+src>component>styles
+                     1.header.css
+					 2.footer.css
+					 3.contact.css
+					 4.gallery.css
+					 5.services.css
+					 etc...
+How to apply inline css:-
+1.in react style cannot applied as of ,inline css just like html.
+html=>inline css =>kebeb case.
+for
+<h1 style="border-color:red">Hy</h1>:possible because it is html.
+in react we have jsx.
+
+syntax case:pascel case or camel case
+hence we connot use kebab case.
+
+Note:-
+=====>in css file we can use css property with no Problem.
+but incase inline css we cannot use kebab case in jsx file.
+hence the syntax of inline css should in proper format of pascel case.
+
+class=>className
+style=>style
+style="border-color:red";
+in form of key and value.
+
+single Property:
+---------------->
+style={{borderColor:"red"}}
+style={{border:"red"}}
+style={{fontSize:"12px"}}
+multiple property
+style={{fontSize:"12px",border:"yellow",backgroundColor:"yellow",fontFamily:"verdana"}}
+
+const mystyle={
+	border:"2px solid red",
+	float:"left",
+	backgroundColor:"blue",
+	height:"300px",
+	width:"300px"
+}
+<div style={mystyle}>I am div</div>
+
+prorioty order:-
+inline<internal<External=>Scope
+ tag    component   Global(App)
+
+ same property color:red
+ inline(green) >
+
+  How to add Iamges,or photos in any component:-
+---------------------------------------------------->
+1.image can be directly added
+as a url as a cdn link  from any server.
+
+2.directly from Binary data data:/image/jpeg:aqswedsws.....
+3.local file
+
+How to Add local file:-
+========================>
+there are two ways add local file.
+1.useing public folder url
+2.useing src urls
+3.directly import.
+
+
+directly from public folder:-
+1.index.html file public folder
+2. image=>js =>index.html path image according to this.
+
+public
+   image/
+   index.html
+
+in any component
+<img src="./image/filename"/>
+  
+  
+In order to Test  local:-
+
+  
+ one way Binding:React {} it stands one way binding. 
+  
+
+What is process.env?.
+----------------------->
+process is a special variable in npm or Node which provides list of global Envirment variables.
+which onces declared can be used any where in entire program.
+
+what is use.env file(Envirment Variable):-
+--------------------------->
+.env files is a special file like config.json which contains all database connection ,server url,username and password alsome
+security setting which is used by application this file is mendatory when used in node ,react,vue and Angular at server.
+Note:-
+========>
+
+
+Working with React Hooks:-
+=============================>
+1.Functional Component
+2.Class Component
+
+wordpress:-
+============>blogging site
+1.theme=>frontEnd
+2.plugin =>Backend
+
+
+KeyPoints:-
+============>
+1.useState:takes one value as a argument.
+2.it bahaves as constructor and work at mounting state.
+in class Based Component we know,container call is a part of mounting life cycle.
+that is way ,the behaviour of useState is same like constructor call.
+3.it will execute only once and initialise,variable with inital value.
+Syntax:-
+=========>
+useState(param);
+const [name,setname]=useState('awanish')
+name  inital value=awanish
+
+at inital phase:-
+==================>
+function useState(param)
+{
+name=param;
+setName(name);
+}
+
+at any Event Call:-
+=======================>
+function handleButton()
+{
+name='Vijay'
+setName(name);
+}
+
+3.useState:-
+=============>1st variable at index 0 and 2nd a 2nd a setter at index=1 useing array-hook.(destructuring in Array).
+
+
+Disadvantage:-
+===============>1.you cannot use this,hook in ncase of re-rendring.
+because since it bahves as,constructor.
+2.it can only accept one argument,hence if want to update multiple argument you need to clone that parameter useing ,rest opertor.
+and then updateto the original variable otherwise it will well over-rided and data will be lossed.
+
+
+
+useState can also return() a value:-
+========================================>
+const [user,setUsers]=useState(()=>{
+//other statement or any operations
+return <value>
+})
+
+Running any intermediate Event Below Inialisation:-
+------------------------------------------------------>
+
+
+
+
+2nd Hooks:-
+===========>UseEffect:-(vvvvv Important)
+This hook is, 95% used in Functional Based Component.
+Why this hook is very Imortant.
+Because useEffect support all life cycle methods.
+
+syntax:-
+import React,{useState,useEffect} from "react";
+after useState method call()
+
+useEffect(()=>{
+
+},[]);
+   |
+   array will decide with life cycle to be called.
+1.mounting state will work when array is empty:[]
+
+
+function arrow()
+{
+console.log("this is Normal function")
+}
+arrow();
+
+const x=()=>
+{
+console.log("this is x=>function")
+}
+arrow();
+x();
+console.log(y());
+const z=(a)=>
+{
+return a*a;
+}
+console.log(z(10))
+
+
+let b=(b1)=>{return b1+b1};
+console.log(b);//Function Type
+console.log(b(10));//calling
+
+console.log('C wala')
+
+
+
+when Every you create Id =>reference create in window object Every window will get saved in cache memory of the browser.
+this concept of store the reference in memory address is called 
+
+
+In React we have useMemo:- Hooks it is used for memorization.
+useMemo is a hooks based function which takes arrow function as a argument and it is useful if you want execute any thing in faster way.
+
+
+use of useMemo:-
+=================>
+crores of crores of data,database in mongodb:-
+indexes will make Query faster.
+similarly if you face data loading issue ,in a react application you can use useMemo to cache the data and next time when data is required instead loading from server
+it will loading from server it will load from cache.
+
+2.useMemo is used,when data is ready but react is takeing lot of time to render it, hence we use useMemo it keep the change in cache and instead of reloading entire dom,
+only change will fetched from and rest will loaded from cache.
+
+3.useMemo is used while dealing Objects in case react.
+why JavaScript when object are compared in Js.
+it compares useing value and memory.
+
+
+Props Inheritance or Props Drilling:-
+=======================================>
+Trick:Bal ki Khal Nikalna.(rai ka Pahad banana)
+
+we know that,props are data passws from parent to child.
+parent to child relation describes inheritance within functional or class COmponents.
+if props where not to be access by parent.
+
+
+
+useRef Hook:-
+==============>useRef is predefine hook which can we used for two operation:-
+
+
+Difference:-
+==============>
+useContext and ContextApi:-
+----------------------------->
+1.useContext=>Hooks
+2.ContextApi=>is not Hooks.
+
+1.useContext =>functional Based Component.
+2.ContextApi =>in class based or Functional Component.
+
+1.contextApi =>cannot be used for passing multiple data object
+2.useContext =>you can pass any number of data.
+
+
+
+Q1.Write a program in react for prop-drilling.
+Q2.How to resolve this problem.
+
+Ans:-ContextApi
+
+
+By default ContextApi:-
+=============================>
+1.<React.Fragment> =>internally used ContextApi.
+2.<React.StrictMode> =>internally used ContextApi.
+    |
+	<></> =><React.Fragment>
+	
+	
+	<React.Fragment>
+	  |
+	  |contextApi
+
+How context Api:-
+------------------>
+work under three stage
+1.create:creating the data.
+2.producer(parent)
+3.consumer(child)
+
+step1=>const food=createContext();           
+
+
+=========================================================================================================================
+
+
+
+
+Working with React Hooks:-
+--------------------------
+Component type.
+---------------
+1. functional component
+2. class component
+
+-----------------------------------
+Best youtube channel CodeRevlution.
+-----------------------------------
+
+wordpress :- CMS for BLOGGING SITE
+----------------------------------
+1. Theme   :- FrontEnd
+2. Plugin  :- BackEnd
+
+PHP => NO USE PHP OOPS CONCEPTS IN WORDPRESS.
+---------------------------------------------
+Laravel => OOPS
+CI      => OOPS
+Class object  => Inheritance , polymorphism overloading....
+---------------------------------------------------------
+
+React => class component
+When we use, class based component we do not any hooks.
+
+Till ver-of-react 16.x : code react in class based component.
+when react-16.x (Beta) : function based component use recommend.
+
+is it posssible to apply oops concept in , functions.
+answar is not. but it is possible using hooks.
+
+Hooks provides functionality f using all concept of class component 
+when use in functions.
+Function based component does not any life cycle method 
+eg. render, componentDidMount, componentDidUpdate ,componentWillUnmount phase.
+Function based component do not have state.
+while class based component have state and state properties and also we
+can manage state using setState method.
+
+same concept is in wordpress : wp_hooks
+in similarly we have hooks in CI ie. codeIgnitor.
+
+-------
+Hooks:-
+------- 
+=> Hooks also enable the special features of , OOPS without writting class and objects.
+=> Total 18 HOOKS of ReactJS 
+   -------------------------
+   1. Predefined Hooks
+   2. Custom Hooks
+Standard :- Every hook we start from name " use<Hook-Name>"
+Example:- setState in class component is same as useState in Functional.
+
+Class component scope global within function and local to the
+class and local to the component, but function based component local to 
+the function and local to the component.
+
+const [name,setName]=useState(null)
+
+
+-----------------------
+Logic Of Hook Program |
+-----------------------
+                      |
+let b="even"          |
+let c=()=>"odd"       |
+let setB=c()          |
+            		  |
+let arr=[b,setB]	  |
+				  |
+x=5  			  |
+				  |
+console.log(arr[x%2]) |
+ 				  |
+-----------------------
+ 
+------------------------------------------------------------------------------------------------
+                                            22-01-2022
+------------------------------------------------------------------------------------------------
+
+KeyPoints:-
+-----------
+1. useState : takes one value as a argument.
+2. It behaves as constructor and work at mounting state.
+3. In class based component we know, constructor call is a part of mounting life cycle.
+   that is why , the behaviour of useState is same like constructor call.
+4. It will execute only once and initialise, varialbe with initial value,
+  
+ Syntax:
+     useState(params)
+     const [name,setName]=useState('pankaj')
+     name initial value = pankaj
+
+at initial phase :-
+-------------------
+ 
+function useState(params){
+   name=params
+
+   setName(name)
+}
+
+at any event call:-
+-------------------
+
+function handleButton(){
+ name='vikas'
+ setName(name)
+}
+
+5. useState :- 1st variable at index 0 and 2nd a setter at index
+               =1 using array-hook. (destructuring in Arrays).
+6. useState can also return a value
+  
+   const [user, setUser]=useState(()=>{
+     //other satement or any operations
+      return <value>
+   })
+
+Disadvantage:-
+--------------
+1. you can not use this , hook in case of re-rendering.
+   because since it behaves as , a constructor.
+2. It can only accept one argument , hence if want to update 
+   multiple argument you to clone that parameter using, rest 
+   operator, and then update to the original variable or otherwise
+   it will be over-rided and data will be lossed.
+
+param=> single argument..
+useState(1,2,4,6,7,8,9,.......n) invalid.
+
+same code :-
+------------
+const [name, setName]=useState(null)
+const [class,setClass]=useState('diploma')
+const [email, setEmail]=useState(null)
+const [password, setPassword]=useState('123456')
+
+Another case:-
+--------------
+const [user,setUser]=useState({name:"pankaj",email:"pankaj@gmail.com",pass:""})
+
+-------------------
+during update phase
+-------------------
+ function handleButton(){
+   let newUser= user;
+   newUser.password ='12345'
+   setUser({...user,pass:newUser})
+}
+
+
+Running any intermediate Event below initialsation
+---------------------------------------------------
+case 1.
+------
+
+const [loginUser,setLoginUser]=useState(()=>{
+   if(window.location.hash=='/dashboard')
+   {
+     return true;
+   }
+   else{
+     return false
+   }
+})
+
+case 2.
+------
+const [loginUser,setLoginUser]=useState(()=>{
+      
+     checkSession()
+     getUserData()
+     sendEmail()
+     checkValidUser()
+   
+   return false;
+})
+
+--------------------------------
+       useEffect() Hook
+================================
+
+1. This hook is , 95% used in funcional based component.
+2. why this hook is very important, because support all
+   life cycle method. 
+
+Syntax:-
+--------
+1. mounting state will work when array is empty: [].
+
+Note:- Write the code after useState() Hooks.
+
+
+import React,{useState,useEffect} from 'react'
+
+const [name,setName]
+useEffect(()=>{
+   console.log("mounting state")
+ },[])
+
+[]=> array will decide with life cycle to be called. 
+
+
+2. update state or phase will run when, [name] : update State.  
+
+useEffect(()=>{
+console.log("update state")
+},[name]);
+
+3. unmount phase or state method will run when return keyword is used inside.
+
+case :1
+-------
+
+useEffect(()=>{
+ 
+console.log("mounting state")
+
+return (
+   console.log("unmounting")
+)
+},[])
+
+case :2
+-------
+useEffect(()=>{
+ 
+console.log("mounting state")
+
+return (
+   console.log("unmounting")
+)
+},[name]);
+
+
+----------------------------------------------------------------
+                         23-01-2022
+----------------------------------------------------------------
+------------------------------------------------------------
+Intermediate invoked function with normal anonymous function
+************************************************************
+
+(function(){return "hello ji"})()
+
+-----------------------------------------------------------
+Intermediate invoked function with arrow anonymous function
+***********************************************************
+
+(a=>console.log("IFFY Arrow Funtion"))()
+
+(a=>console.log(a))(10)
+
+((b)=>b*b)(10)
+
+
+Function With Reference Varialbe
+*********************************
+
+-------------------------------------------------
+normal anonymous function with Reference Variable
+*************************************************
+
+let b=function(){
+    console.log("normal anonymous function with reference variable")
+}
+
+
+------------------------------------------------------------------
+Arrow anonymous function with Reference Variable or Arrow function 
+******************************************************************
+
+let b =()=>  "arrow anonymous function with reference variable"
+
+---------------------------------------
+Synthesis or Induction Function Concept
+***************************************
+
+let w1=w2=w3=w4=wn=a=>a*a;
+
+console.log("call with w1 ",w1(12))
+console.log("call with w1 ",w2(22))
+console.log("call with w1 ",w3(21))
+console.log("call with w1 ",w4(2))
+
+---------------------
+Higher Order Function
+*********************
+
+A function gives agrgument as a function or return a function or both
+called as Higher order function.
+
+-------------------
+First Class Citizin 
+*******************
+
+A function triet as a variable like function asign a variable or function
+given argument as a function or return a function or both called as
+first class citizin.
+
+
+---------------------------------------------------------------------------------
+HW. Synthetiser or Induction and Higher Order Function , Make component use this.
+---------------------------------------------------------------------------------
+
+
+---------------------------------------------------------------------------------------------------------------------
+                      26-01-2023                                                        26-01-2023
+---------------------------------------------------------------------------------------------------------------------
+
+When ever you create ID => reference create in window object .
+Every window will get saved in cache memory of the browser.
+This concept of store the reference in memory address is called  memorization.
+
+If its reference is created once, then it can be globally from anywhere,
+without , without re-instialising it or re-declarating it.
+
+----------------------
+2nd Case or Difference
+**********************
+
+-----------------------------------
+Object Cloning and Object Creating.
+-*********************************-
+
+----------------------------
+Generally object comparision
+****************************
+
+var object1={ key1:"value1", key2:"value2" }
+var object2={ key1:"value1", key2:"value2" }
+
+every thought
+
+keys == keys all
+values === values all
+
+since objects are created in heap memory.
+
+objects1 => memory Address => 1001
+objects2 => memory Address => 1002
+
+even though keys and value same since they will never be same:-
+
+This is the reason, Array and object both are object but not same.
+
+Array works like collection => Memory => stack.
+object works like pointer => memory => heap.
+
+--------------------
+clone/copy of object
+********************
+
+var newObject = object1
+
+1. keys and values same
+2. memory address same
+
+---------------------------------------------------------------------------------
+------------------------
+In React we have useMemo 
+************************
+Hooks it is used for memorization.
+useMemo is a hooks based function which takes arrow function as a argument.
+and it is usefull it you if you want execute any thing in faster way.
+
+---------------
+Use of useMemo
+***************
+
+crores of crores of data, database is mongodb :-
+Indexes will make Query faster.     
+
+Similarly if you face data loading issue , in a react application 
+you can use useMemo to cache the data and next time when data is 
+required instead loading from server it will load from cache.
+
+
+2. useMemo is used , when data is ready but react is taking lot of time
+   to render it, hence we use useMemo it keep the chages in cache and instead 
+   of reloading entire DOM, only changes will fetched from data and rest will 
+   loaded from cache.
+
+3. useMomo is used while dealing objects in case react why javascript when
+   object are compared in Js.
+   It compares using value and memory but since react uses virtual DOM, It will
+   only compare values which is return true, but  when you use useMemo then it 
+   will compare value and memory both, in that it will return false.
+
+Syntax
+******
+
+Without using Memo
+******************
+
+import React,{useMemo} from 'react'
+
+
+const [data,setData]=loadData([])
+
+function loadData(){
+let promis= fetch(url).then((response)=>{
+response.json().then((result)=>{
+console.log(setData=result))).catch((error)=>error)
+
+return Data;
+
+}
+
+Using Memo
+----------
+
+import React,{useMemo} from 'react'
+
+const [data,setData] = useMemo(()=>{
+let promis= fetch(url).then((response)=>{
+response.json().then((result)=>{
+console.log(setData=result))).catch((error)=>error)
+
+},dependancy)
+
+-----------------------------------------------------------------------------------------------------------------------------------------+
+                                                                    27-01-2023
+-----------------------------------------------------------------------------------------------------------------------------------------+
+                                                   No Note Content Provide Only Practical this Date
+                                                   ************************************************
+
+useRef Hook
+***********
+useRef is predifind hook which can be used for two  way.
+
+1. To manipulate the virtual DOM by accessing them in current Scope
+   using ref props, target.
+2. From validation use ref.
+3. Maintain the state of variable when re-renderring takes place.
+
+problem solve:- when ever state changes component re-renders and data gets 
+                overwrite in order to solve we used to maintain , prevState 
+                => prevState + newState or ...spread Operator, but for this
+                we require setter, which should update at every call of use useEffect.
+
+Solution :- useRef does not any setter but is automatically holds the value, at global 
+            scope while re-rendering or its loads the data from cacheinstead creating 
+            and destroy, which enables it tomaintain current scope of the variable.
+
+-----------------------------------------------------------------------------------------------------------------------------------------+
+                                                                    31-01-2023
+-----------------------------------------------------------------------------------------------------------------------------------------+
+
+Props Inheritance or Prop Drilling:
+***********************************
+
+Trick : Bal ki khal nikalna . (Rai ka pahad banana )
+
+We know that, props are data passed from parent to child.
+Parent to child relation describes inheritance within functional or class components.
+
+if props where not to be access by parent.
+
+Constructor (props){
+          super(props) => prperties can be accessed or inherited from parent.
+}
+          
+
+let name="Pankaj Kumar";
+
+<Component name={name}>
+    <Child_A name={name}>
+       <Child_B name={name}>
+            <Child_C name={name}>
+                <Child_D name={name}>....</Child_D>
+            </Child_C>
+       </Child_B>
+    </Child_A>
+</Component>
+
+
+Problem :- 
+**********
+As no of child component increase, props data passing becomes difficult. This problem is called props drilling.
+
+if want to make any state global.
+---------------------------------
+1. Window object =>
+2. LocalStorage  =>
+3. using react
+    1. use contextAPI 
+    2. use useReducer Hooks
+    3. useContext Hooks
+    4. Redux
+
+------------------------------------------------------------------------------------------------------------------------------------------+
+                                                                  02-02-2023
+------------------------------------------------------------------------------------------------------------------------------------------+
+Diffrence :-
+************
+
+useContext and ContextAPI
+*************************
+1. useContext => Hooks
+1. ContextAPI => Is not Hooks
+
+2. useContext => functional based component.
+2. contextAPI => In class based or functional component.
+
+3. contextAPI => Cannot be used for passing multiple data objects.
+3. useContext => you can pass any number of data.
+
+
+-------------------------------------
+Important Question in React Interview
+*************************************
+Q.1 => WAP a program in react for prop-drilling.
+Q.2 => How to resolve the problem.
+Ans => ContextAPI
+
+
+By Default Context (scope parent to child ) API :-
+**************************************************
+1. <React.StrictMode> => Internally used ContextAPI
+2. <React.Fragment>   => Internally used ContextAPI
+3. <></>              => It new React Fragment
+
+---------------
+How Context API
+***************
+works under three stage
+1. create                        : creating the data.
+2. producer or Provider (parent) : 
+3. consumer (child)              :
+
+Step 1. => const food = createContext();
+Step 2. => <Food.Provider value="Samosa">
+                <ChildA/>
+                <ChildB/>
+                <ChildC/>
+           </Food.Provider>
+ 
+           export {Food}
+
+Step 3. => function childA(props){
+            {props.value} //impossible
+           }
+           
+           typeof => value => function
+
+
+          <Food.consumer>{
+              (value)=>{
+                  return ( <h1> This is Chidl Component </h1>)
+                 }
+            }
+           </Food.consumer>
+
+-------------------------------------------------------------------------------------------------------------------------------------------------+
+                                                                 03-02-2023                                                                      +
+-------------------------------------------------------------------------------------------------------------------------------------------------+
+
+Why contextapi is recomended in using :-
+****************************************
+1. Only single data can be at a time.
+2. if more of data is passed that it may lead to dom like structure which is called as "call back hell"
+
+Solution of the Problem:-
+*************************
+1. Using Redux
+2. Using context hook
+
+
+-------------------------------------------------------------------------------------------------------------------------------------------------+
+                                                                 04-02-2023                                                                      +
+-------------------------------------------------------------------------------------------------------------------------------------------------+
+2. contextApi Hook :-
+*********************
+useContext is as same as Context Api, All steps same as ContextAPI the only difference at consumer end.
+
+To implement context Hook:-
+---------------------------
+1. createContext : data
+2. producer ( parent )
+3. consumer ( child )
+
+1. Simple to implement.
+2. Can be used to easily pass n of deta to consumer . (child)
+3. No, need to use successive calling of , methods.
+4. global state manage.
+5. function based component because it is a Hook.
+
+
+Important step:-
+****************
+1. step same
+2. step same
+3. import {useContext} from 'react'
+
+Note:- All the data exported from createContext using producer,
+       can be imported and used as per requirement.
+
+Note :: No use of <Tochild.consumer></Tochild.consumer>
+
+
+concept of server side and client side rendering:-
+**************************************************
+Client Side Rendering :-  When data changes due to UI client side rendering.
+Server Side Rendering :- When UI changes due to data then called server side rendering.
+
+
+Problems:-
+----------
+In case server side rendering:-
+*******************************
+Note :- Some time you may require to generate dynamic id.
+
+In React we have virtual DOM. in that targetting in not easy. 
+
+useRef Hook => target
+
+but in case of vanila js , It very easy to handle ID in React DOM.
+like :- document.getElementById()
+        document.querySelector()
+
+Note :: why you should target any element using id ?
+
+problem of id in React ?
+
+
+-------------------------------------------------------------------------
+06/02/2023
+----------->
+useId:-
+========>To generate Dynamic Id's in server side Rendering:-
+Advantage of usedId Hook:-
+1.it is simple to use.
+2.generate automatically random Ids for server side rendering.
+3.secure way, where No use is allowed to access the virtual Dom useing.
+<:rn:>where n=>0,1,2,3,4,5,6,7.......name
+Explanation :-
+1.id=>global object in window object.
+2.id=>window.a=>Indetifier (Variable)
+3.id=>xyz-id =>Object window.xyz-id:invalid
+4.:r1:=>Object window.::r1::=>invalid character in variable name.
+background-color(kebab case)=>React =>BackgroundColor(camelcase).
+
+4.useReducer Hook:-
+-------------------->
+1.it is most complex and Important Hook in React.
+2.THis Hook undergoes Latest change every time.
+3.Reason keep updating:-
+because it is build upon the top Redux.
+4.it keeps on updating and one may face,version level Debing Error when useing this Hook.
+
+<Ract.StrictMode>
+</Ract.StrictMode>
+this uses strict ,of javascript.
+hence,any strict typed Error will raise Eception or,complie Time Error.
+Note:"use strict"; =>JavaScript strict mode.
+
+5.it is core of redux.
+When to use:-
+==============>useReducer is,replacement of useState with multiple Argument.
+it should be used when ,you are working with,multiple Arguments.
+Syntax:-
+=========>
+1.useReducer accepts:two argument
+       1.reducerFunction or independent functional.
+	   
+       2. Intial argument
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
